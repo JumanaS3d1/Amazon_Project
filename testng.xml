@@ -1,0 +1,8 @@
+<suite name="Test Suite">
+  <test name="My Test">
+    <classes>
+      <class name="Test_Amazon.Login_Test"/>
+      <class name="Test_Amazon.BuyABook_Test"/>
+    </classes>
+  </test>
+</suite>

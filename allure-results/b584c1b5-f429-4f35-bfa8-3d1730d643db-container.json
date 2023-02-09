@@ -1,0 +1,1 @@
+{"uuid":"b584c1b5-f429-4f35-bfa8-3d1730d643db","name":"Test_Amazon.BaseTest.setup","children":["8ebcde11-7cf5-48fc-a40b-3f0e66f2875c"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1675872035603,"stop":1675872035607}],"afters":[],"start":1675872035603,"stop":1675872035608}
