@@ -3,6 +3,7 @@
     <classes>
       <class name="Test_Amazon.Login_Test"/>
       <class name="Test_Amazon.BuyABook_Test"/>
+      <class name="Test_Amazon.TestRating"/>
     </classes>
   </test>
 </suite>

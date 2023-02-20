@@ -46,20 +46,11 @@ public class BuyABook_Test extends BaseTest {
 	}
 
 	@DataProvider
-	public static Object[][] getData() throws Exception {
-
-		List<String[]> lines = ReadCsvFile.readAllLines("Books.csv");
-		lines.remove(0);
-		Object[][] data = new Object[lines.size()][lines.get(0).length];
-		int index = 0;
-		for (String[] line : lines) {
-			data[index] = line;
-			index++;
-		}
-		return data;
+	public Object[][] getBookData() throws Exception {
+		return getData("Books.csv");
 	}
 
-	@Test(priority = 2, dataProvider = "getData")
+	@Test(priority = 2, dataProvider = "getBookData")
 	public void searchSubjects(String book) throws InterruptedException, IOException {
 		SearchItem_Page searchItem = new SearchItem_Page(driver);
 		waitForElementToBeClickable(searchItem.getSearchBar());
@@ -68,11 +59,11 @@ public class BuyABook_Test extends BaseTest {
 		searchItem.searchClick();
 		SearchResult_Page searchResult = new SearchResult_Page(driver);
 		WebElement bestSeller = searchResult.getBestSeller();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement openLink = bestSeller.findElement(By.xpath("../../../.."));
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		openLink.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		ItemInfo_Page itemInfo = new ItemInfo_Page(driver);
 		itemInfo.getPrice();
 		prices.add(itemInfo.getActualPrice());

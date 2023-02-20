@@ -47,9 +47,5 @@ public class Login_Test extends BaseTest{
         passLogin.logIn();       
     }
 	
-    @AfterTest
-    public void tearDown() {
-      driver.quit();
-    }
 	 
 }

@@ -10,7 +10,7 @@ public class RateItems extends SearchItem_Page{
 
 	WebDriver driver;
 	
-	private By ratingLocator = By.xpath("//*[@class=\"a-icon a-icon-star-medium a-star-medium-4\"]");
+	private By ratingLocator = By.xpath("//*[@class=\"a-size-base\"]");
 	
 	public RateItems(WebDriver driver) {
 		super(driver);
@@ -21,10 +21,6 @@ public class RateItems extends SearchItem_Page{
 		return driver.findElement(ratingLocator);
 	}
 	
-	public List<WebElement> getSearchResults(){
-		return driver.findElements(By.xpath("//*[@class=\"a-icon-alt\"]"));
-	}
-
 	public void clickRating() {
 		getRating().click();
 	}

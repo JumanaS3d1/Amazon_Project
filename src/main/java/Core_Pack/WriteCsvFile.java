@@ -9,6 +9,24 @@ import java.util.List;
 import com.opencsv.CSVWriter;
 
 public class WriteCsvFile {
+	public static void writeDataLineByLine(String filePath, String[] headers)
+	{
+	   
+	    File file = new File(filePath);
+	    try {
+	        FileWriter outputfile = new FileWriter(file);
+	        CSVWriter writer = new CSVWriter(outputfile);
+	  
+	        writer.writeNext(headers);
+
+	        // closing writer connection
+	        writer.close();
+	    }
+	    catch (IOException e) {
+	        // TODO Auto-generated catch block
+	        e.printStackTrace();
+	    }
+	}
 	public static void writeDataLineByLine(String filePath, List<String[]> data, String[] headers)
 	{
 	   
@@ -29,8 +47,24 @@ public class WriteCsvFile {
 	        e.printStackTrace();
 	    }
 	}
-	
-	public static void main(String[] args) {
-		
+	public static void writeDataLineByLine(String filePath, List<String[]> data, Boolean append)
+	{
+	   
+	    File file = new File(filePath);
+	    try {
+	        FileWriter outputfile = new FileWriter(file, append);
+	        CSVWriter writer = new CSVWriter(outputfile);
+	  
+	        for(String[] line: data) {
+		        writer.writeNext(line);
+	        }
+	        // closing writer connection
+	        writer.close();
+	    }
+	    catch (IOException e) {
+	        // TODO Auto-generated catch block
+	        e.printStackTrace();
+	    }
 	}
+
 }
