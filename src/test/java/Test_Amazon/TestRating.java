@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import Core_Pack.TakeScreenShot;
 import Core_Amazon.ItemInfo_Page;
 import Core_Amazon.RateItems;
 import Core_Amazon.SearchItem_Page;
@@ -60,6 +61,8 @@ public class TestRating extends BaseTest {
 		data = new ArrayList<String[]>();
 		for (int i = 0; i < itemNames.size(); i++) {
 		    float actualRating = Float.parseFloat(driver.findElements(searchResult.getRating()).get(i).getText());
+			TakeScreenShot takeSc = new TakeScreenShot(driver);
+			takeSc.takeScreenShot("downloads/booking.jpg");
 		    data.add(new String[] { itemNames.get(i), "4", "" + actualRating + "", String.valueOf(actualRating >= 4) });
 		}
 		WriteCsvFile.writeDataLineByLine("RatingOutput.csv", data, true);
