@@ -7,7 +7,8 @@
         <methods>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="searchSubjects" invocation-numbers="0 1"/>
+          <include name="searchSubjects" invocation-numbers="0"/>
+          <include name="CartTest"/>
         </methods>
       </class> <!-- Test_Amazon.BuyABook_Test -->
     </classes>
